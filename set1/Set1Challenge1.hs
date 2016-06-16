@@ -22,6 +22,7 @@ import qualified Data.Char as Char
 
 -- Return the hex string corresponding to integer n.
 intToHex :: Integer -> String
+intToHex 0 = "0"
 intToHex n = map (smallIntToHex . fromIntegral) (hexAppend n [])
     where hexAppend 0 lst = lst
           hexAppend n lst = hexAppend (n `quot` 16) ((n `mod` 16) : lst)
@@ -79,7 +80,8 @@ base64ToHex = intToHex . base64ToInt
 
 -- Return the hex string corresponding to ASCII string a.
 asciiToHex :: String -> String
-asciiToHex a = concat $ map (\ c -> intToHex $ toInteger $ Char.ord c) a
+asciiToHex a = concat $ map (\ c -> (if (Char.ord c) <= 15 then "0" else "")
+                                     ++ (intToHex $ toInteger $ Char.ord c)) a
 
 
 -- Return the ASCII string corresponding to hex string x.
