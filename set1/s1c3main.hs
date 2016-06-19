@@ -1,14 +1,11 @@
 ----------------------------------------
 -- Joseph Winters
--- Cryptopals Set 1 Challenge 1 Program
+-- Cryptopals Set 1 Challenge 3 Program
 -- Spring 2016
 ----------------------------------------
 
 
 import Set1Challenge3
-
-
--- TODO: write main
 
 
 main = do
