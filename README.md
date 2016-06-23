@@ -9,7 +9,7 @@ planning on learning Haskell, but until I'm more comfortable with it, I'll be
 switching to completing these problems in Java. I'm fairly new to Java as well,
 but having programmed in C and C++, I'm expecting less of a learning curve.
 
-In case anyone finds them interesting, I'll leave what I had written in Haskell
+In case anyone finds it interesting, I'll leave what I had written in Haskell
 in the `haskell` subdirectory; my Java solutions will be in the `java`
 subdirectory.
 
