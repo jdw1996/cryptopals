@@ -17,7 +17,7 @@ public class S1C1Main {
         System.out.println("\"" + base64 + "\"");
 
         Set1Challenge1.Data data
-            = new Set1Challenge1.Data(hex, Set1Challenge1.Data.Encoding.HEX);
+            = new Set1Challenge1.Data(hex, Set1Challenge1.Encoding.HEX);
 
         if (data.getBase64().equals(base64)) {
             System.out.println("This is computed correctly by the program.");

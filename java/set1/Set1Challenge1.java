@@ -6,7 +6,6 @@
 
 
 import java.nio.ByteBuffer;
-
 import java.util.Base64;
 
 
@@ -83,9 +82,6 @@ public class Set1Challenge1 {
             return result;
         }
 
-        // Enum type to indicate the encoding of strings
-        public enum Encoding { DEC, HEX, BASE64, ASCII }
-
         // Byte array to store information
         private byte[] data;
 
@@ -127,6 +123,9 @@ public class Set1Challenge1 {
         }
 
     }
+
+    // Enum type to indicate the encoding of strings
+    public enum Encoding { DEC, HEX, BASE64, ASCII }
 
     // Return the ASCII character corresponding to integer n.
     public static char chr(int n) {
