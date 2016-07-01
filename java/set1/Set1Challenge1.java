@@ -17,6 +17,9 @@ public class Set1Challenge1 {
         public Data(int n) {
             data = intToBytes(n);
         }
+        public Data(byte[] bytes) {
+            data = bytes;
+        }
         public Data(String info, Encoding encoding) {
             if (encoding == Encoding.DEC) {
                 data = intToBytes(Integer.parseInt(info));
@@ -80,6 +83,11 @@ public class Set1Challenge1 {
                 result += chr(b);
             }
             return result;
+        }
+
+        // Return data as a byte array.
+        public byte[] getBytes() {
+            return data;
         }
 
         // Byte array to store information
