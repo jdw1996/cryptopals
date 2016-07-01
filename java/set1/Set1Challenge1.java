@@ -77,7 +77,7 @@ public class Set1Challenge1 {
         public String getASCII() {
             String result = "";
             for (byte b : data) {
-                result += (char)b;
+                result += chr(b);
             }
             return result;
         }
@@ -105,9 +105,9 @@ public class Set1Challenge1 {
         // Return a hex digit corresponding to integer n.
         private static char intToHexDigit(int n) {
             if (0 <= n && n <= 9) {
-                return (char)(48 + n); // 48 == ord('0')
+                return chr(48 + n); // 48 == ord('0')
             } else {
-                return (char)(97 + n - 10); // 97 == ord('a')
+                return chr(97 + n - 10); // 97 == ord('a')
             }
         }
 
