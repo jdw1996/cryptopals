@@ -41,7 +41,7 @@ public class Set1Challenge3 {
 
         // Constructor
         public XORDecryption(double score, char key,
-                          String plaintext, String ciphertext) {
+                             String plaintext, String ciphertext) {
             this.score = score;
             this.key = key;
             this.plaintext = plaintext;
