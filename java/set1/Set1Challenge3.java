@@ -31,6 +31,7 @@ public class Set1Challenge3 {
     }
 
     public static class Decryption {
+
         private double score;
         private char key;
         private String decryption;
@@ -61,6 +62,7 @@ public class Set1Challenge3 {
         public void setDecryption(String decryption) {
             this.decryption = decryption;
         }
+
     }
 
     // Return a Decryption with key key, decryption determined by decrypting
