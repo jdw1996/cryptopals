@@ -34,13 +34,16 @@ public class Set1Challenge3 {
 
         private double score;
         private char key;
-        private String decryption;
+        private String plaintext;
+        private String ciphertext;
 
         // Constructor
-        public Decryption(double score, char key, String decryption) {
+        public Decryption(double score, char key,
+                          String plaintext, String ciphertext) {
             this.score = score;
             this.key = key;
-            this.decryption = decryption;
+            this.plaintext = plaintext;
+            this.ciphertext = ciphertext;
         }
 
         // Getters and setters
@@ -56,11 +59,17 @@ public class Set1Challenge3 {
         public void setKey(char key) {
             this.key = key;
         }
-        public String getDecryption() {
-            return decryption;
+        public String getPlaintext() {
+            return plaintext;
         }
-        public void setDecryption(String decryption) {
-            this.decryption = decryption;
+        public void setPlaintext(String plaintext) {
+            this.plaintext = plaintext;
+        }
+        public String getCiphertext() {
+            return ciphertext;
+        }
+        public void setCiphertext(String ciphertext) {
+            this.ciphertext = ciphertext;
         }
 
     }
@@ -80,15 +89,15 @@ public class Set1Challenge3 {
                                       Set1Challenge1.Encoding.ASCII);
         String repStringHex = repStringData.getHex();
 
-        String hexDecryption
+        String plaintextHex
             = Set1Challenge2.fixedXOR(repStringHex, ciphertext);
-        Set1Challenge1.Data decryptionData
-            = new Set1Challenge1.Data(hexDecryption,
+        Set1Challenge1.Data plaintextData
+            = new Set1Challenge1.Data(plaintextHex,
                                       Set1Challenge1.Encoding.HEX);
-        String decryption = decryptionData.getASCII();
-        double score = scoreIsEnglish(decryption);
+        String plaintext = plaintextData.getASCII();
+        double score = scoreIsEnglish(plaintext);
 
-        return new Decryption(score, key, decryption);
+        return new Decryption(score, key, plaintext, ciphertext);
     }
 
     // Return true if c is a printable ASCII character and false otherwise.

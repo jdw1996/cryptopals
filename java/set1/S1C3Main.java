@@ -17,7 +17,7 @@ public class S1C3Main {
             = Set1Challenge3.crackSingleCharXOR(hex);
 
         System.out.println("the decryption by single character XOR is:");
-        System.out.println("\"" + result.getDecryption() + "\"");
+        System.out.println("\"" + result.getPlaintext() + "\"");
         System.out.println("");
         System.out.println("This decryption received a score of "
                             + result.getScore()
