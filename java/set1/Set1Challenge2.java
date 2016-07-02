@@ -17,7 +17,10 @@ public class Set1Challenge2 {
         byte[] bytesy = datay.getBytes();
         byte[] bytesz = new byte[bytesx.length];
         for (int i = 0; i < bytesx.length; i++) {
-            bytesz[i] = (byte)(bytesx[i] ^ bytesy[i]);
+            int bytex = (int)bytesx[i];
+            int bytey = (int)bytesy[i];
+            int bytez = bytex ^ bytey;
+            bytesz[i] = (byte)(0xff & bytez);
         }
         Set1Challenge1.Data dataz = new Set1Challenge1.Data(bytesz);
         return dataz.getHex();
