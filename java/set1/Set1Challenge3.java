@@ -17,14 +17,16 @@ public class Set1Challenge3 {
     public static XORDecryption crackSingleCharXOR(String ciphertext) {
         char chr0 = Set1Challenge1.chr(0);
         char chr127 = Set1Challenge1.chr(127);
-        List<XORDecryption> decryptions = new ArrayList<XORDecryption>();
+        List<XORDecryption> xorDecryptions = new ArrayList<XORDecryption>();
         for (char possibleKey = chr0; possibleKey <= chr127; possibleKey++) {
-            decryptions.add(decryptWith(possibleKey, ciphertext));
+            xorDecryptions.add(decryptWith(possibleKey, ciphertext));
         }
-        XORDecryption bestXORDecryption = decryptions.get(0);
-        for (int i = 1; i < decryptions.size(); i++) {
-            if (decryptions.get(i).getScore() > bestXORDecryption.getScore()) {
-                bestXORDecryption = decryptions.get(i);
+        XORDecryption bestXORDecryption = xorDecryptions.get(0);
+        XORDecryption currXORDecryption;
+        for (int i = 1; i < xorDecryptions.size(); i++) {
+            currXORDecryption = xorDecryptions.get(i);
+            if (currXORDecryption.getScore() > bestXORDecryption.getScore()) {
+                bestXORDecryption = currXORDecryption;
             }
         }
         return bestXORDecryption;
