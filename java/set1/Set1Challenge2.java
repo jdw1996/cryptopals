@@ -7,6 +7,7 @@
 
 public class Set1Challenge2 {
 
+    // Return the result of xor-ing the two hex strings x and y.
     public static String fixedXOR(String x, String y) {
         Set1Challenge1.Data datax
             = new Set1Challenge1.Data(x, Set1Challenge1.Encoding.HEX);
