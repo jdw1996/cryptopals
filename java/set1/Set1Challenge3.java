@@ -11,26 +11,26 @@ import java.util.List;
 
 public class Set1Challenge3 {
 
-    // Return a Decryption containing the score of the best decryption, the
+    // Return an XORDecryption containing the score of the best decryption, the
     //   character used for decryption, and the decrypted version of the hex
     //   string ciphertext.
-    public static Decryption crackSingleCharXOR(String ciphertext) {
+    public static XORDecryption crackSingleCharXOR(String ciphertext) {
         char chr0 = Set1Challenge1.chr(0);
         char chr127 = Set1Challenge1.chr(127);
-        List<Decryption> decryptions = new ArrayList<Decryption>();
+        List<XORDecryption> decryptions = new ArrayList<XORDecryption>();
         for (char possibleKey = chr0; possibleKey <= chr127; possibleKey++) {
             decryptions.add(decryptWith(possibleKey, ciphertext));
         }
-        Decryption bestDecryption = decryptions.get(0);
+        XORDecryption bestXORDecryption = decryptions.get(0);
         for (int i = 1; i < decryptions.size(); i++) {
-            if (decryptions.get(i).getScore() > bestDecryption.getScore()) {
-                bestDecryption = decryptions.get(i);
+            if (decryptions.get(i).getScore() > bestXORDecryption.getScore()) {
+                bestXORDecryption = decryptions.get(i);
             }
         }
-        return bestDecryption;
+        return bestXORDecryption;
     }
 
-    public static class Decryption {
+    public static class XORDecryption {
 
         private double score;
         private char key;
@@ -38,7 +38,7 @@ public class Set1Challenge3 {
         private String ciphertext;
 
         // Constructor
-        public Decryption(double score, char key,
+        public XORDecryption(double score, char key,
                           String plaintext, String ciphertext) {
             this.score = score;
             this.key = key;
@@ -74,10 +74,10 @@ public class Set1Challenge3 {
 
     }
 
-    // Return a Decryption with key key, decryption determined by decrypting
+    // Return an XORDecryption with key key, decryption determined by decrypting
     //   the hex string ciphertext with key, and score determined by scoring the
     //   decryption on how likely it is to be English text.
-    private static Decryption decryptWith(char key, String ciphertext) {
+    private static XORDecryption decryptWith(char key, String ciphertext) {
         int halfCiphertextLength = ciphertext.length() / 2;
         StringBuffer repStringBuffer = new StringBuffer(halfCiphertextLength);
         for (int i = 0; i < halfCiphertextLength; i++) {
@@ -97,7 +97,7 @@ public class Set1Challenge3 {
         String plaintext = plaintextData.getASCII();
         double score = scoreIsEnglish(plaintext);
 
-        return new Decryption(score, key, plaintext, ciphertext);
+        return new XORDecryption(score, key, plaintext, ciphertext);
     }
 
     // Return true if c is a printable ASCII character and false otherwise.
