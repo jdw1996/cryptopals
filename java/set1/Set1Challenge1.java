@@ -60,7 +60,6 @@ public class Set1Challenge1 {
                 result += byteToHex(b);
             }
             while (result.length() > 1 && result.charAt(0) == '0') {
-                //System.out.println(result);
                 result = result.substring(1);
             }
             if (result.length() % 2 == 1) {
