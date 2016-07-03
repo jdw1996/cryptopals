@@ -22,9 +22,7 @@ public class Set1Challenge3 {
             xorDecryptions.add(decryptWith(possibleKey, ciphertext));
         }
         XORDecryption bestXORDecryption = xorDecryptions.get(0);
-        XORDecryption currXORDecryption;
-        for (int i = 1; i < xorDecryptions.size(); i++) {
-            currXORDecryption = xorDecryptions.get(i);
+        for (XORDecryption currXORDecryption : xorDecryptions) {
             if (currXORDecryption.getScore() > bestXORDecryption.getScore()) {
                 bestXORDecryption = currXORDecryption;
             }
