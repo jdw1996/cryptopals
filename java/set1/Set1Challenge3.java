@@ -106,23 +106,24 @@ public class Set1Challenge3 {
     }
 
     // Return true if c is an ASCII letter character and false otherwise.
-    private static boolean isASCIILetter(char c) {
-        return ('a' <= c && c < 'z') || ('A' <= c && c <= 'Z');
+    private static boolean isASCIILetterOrSpace(char c) {
+        return ('a' <= c && c < 'z') || ('A' <= c && c <= 'Z') || (c == ' ');
     }
 
     // Score how likely it is that the string plaintext is English text.
     private static double scoreIsEnglish(String plaintext) {
         double numPrintableASCII = 0;
-        double numASCIILetters = 0;
+        double numASCIILettersOrSpaces = 0;
         for (int i = 0; i < plaintext.length(); i++) {
             if (isPrintableASCII(plaintext.charAt(i))) {
                 numPrintableASCII++;
             }
-            if (isASCIILetter(plaintext.charAt(i))) {
-                numASCIILetters++;
+            if (isASCIILetterOrSpace(plaintext.charAt(i))) {
+                numASCIILettersOrSpaces++;
             }
         }
-        return (numPrintableASCII + numASCIILetters) / plaintext.length();
+        return (numPrintableASCII + numASCIILettersOrSpaces)
+               / plaintext.length();
     }
 
 }
