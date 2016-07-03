@@ -59,9 +59,6 @@ public class Set1Challenge1 {
             for (byte b : data) {
                 result += byteToHex(b);
             }
-            while (result.length() > 1 && result.charAt(0) == '0') {
-                result = result.substring(1);
-            }
             if (result.length() % 2 == 1) {
                 result = "0" + result;
             } else if (result.length() == 0) {
