@@ -1,4 +1,5 @@
 # cryptopals
+
 My solutions to the [Matasano Cryptopals challenges](https://cryptopals.com/).
 
 ## Format
@@ -25,5 +26,6 @@ language.
 
 I'm using these challenges to learn more about cryptography, but also to learn
 new languages and language features. If you have any pointers you'd like to
-share about my code, feel free to open an issue or email me at
-[jdwinters96@gmail.com](mailto:jdwinters96@gmail.com).
+share about my code, feel free to
+[open an issue](https://github.com/jdw1996/cryptopals/issues/new) or email me
+at [jdwinters96@gmail.com](mailto:jdwinters96@gmail.com).
