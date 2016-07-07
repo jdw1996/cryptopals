@@ -18,6 +18,6 @@ main = do
   putStrLn ""
   putStr "This decryption received a score of "
   putStr . show $ score
-  putStr " (lower is better) and\nwas carried out with the character "
+  putStr " (higher is better) and\nwas carried out with the character "
   putStr . show $ ch
   putStrLn "."
