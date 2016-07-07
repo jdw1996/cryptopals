@@ -110,20 +110,18 @@ public class Set1Challenge3 {
         return ('a' <= c && c < 'z') || ('A' <= c && c <= 'Z') || (c == ' ');
     }
 
-    // Score how likely it is that the string plaintext is English text.
+    // Score how likely it is that ASCII string plaintext is English text.
     private static double scoreIsEnglish(String plaintext) {
-        double numPrintableASCII = 0;
-        double numASCIILettersOrSpaces = 0;
+        double scoreAccumulator = 0;
         for (int i = 0; i < plaintext.length(); i++) {
             if (isPrintableASCII(plaintext.charAt(i))) {
-                numPrintableASCII++;
+                scoreAccumulator++;
             }
             if (isASCIILetterOrSpace(plaintext.charAt(i))) {
-                numASCIILettersOrSpaces++;
+                scoreAccumulator++;
             }
         }
-        return (numPrintableASCII + numASCIILettersOrSpaces)
-               / plaintext.length();
+        return scoreAccumulator / plaintext.length();
     }
 
 }
