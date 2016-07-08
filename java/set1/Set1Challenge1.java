@@ -36,12 +36,15 @@ public class Set1Challenge1 {
                 }
             } else if (encoding == Encoding.BASE64) {
                 data = Base64.getDecoder().decode(info);
-            } else {            // must be ASCII
+            } else {           // must be ASCII
                 data = new byte[info.length()];
                 for (int i = 0; i < info.length(); i++) {
                     data[i] = (byte)(info.charAt(i));
                 }
             }
+        }
+        public Data(Data d) {
+            this(d.getInt());  // could use any getter/constructor combo
         }
 
         // Return data as an integer.
