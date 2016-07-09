@@ -89,6 +89,11 @@ public class Set1Challenge1 {
             return data;
         }
 
+        // Return the number of bytes in this object.
+        public int getSize() {
+            return data.length;
+        }
+
         // Byte array to store information
         private byte[] data;
 
