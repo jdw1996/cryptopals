@@ -20,8 +20,8 @@ public class S1C3Main {
         System.out.println("\"" + result.getPlaintext() + "\"");
         System.out.println("");
         System.out.println("This decryption received a score of "
-                            + result.getScore()
-                            + " (higher is better) and");
+                           + result.getScore()
+                           + " (higher is better) and");
         System.out.println("was carried out with the character '"
                            + result.getKey()
                            + "'.");
