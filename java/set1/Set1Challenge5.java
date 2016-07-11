@@ -9,37 +9,22 @@ public class Set1Challenge5 {
 
     // Return the hex string created by encrypting ASCII string plaintext with
     //   key under repeating XOR.
-    public static String encryptWithRepKeyXOR(String key, String plaintext) {
+    public static Data encryptWithRepKeyXOR(String key, String plaintext) {
         String repString = getRepString(plaintext.length(), key);
-
-        Set1Challenge1.Data repStringData
-            = new Set1Challenge1.Data(repString,
-                                      Set1Challenge1.Encoding.ASCII);
-        String repStringHex = repStringData.getHex();
-        Set1Challenge1.Data plaintextData
-            = new Set1Challenge1.Data(plaintext,
-                                      Set1Challenge1.Encoding.ASCII);
-        String plaintextHex = plaintextData.getHex();
-
-        String ciphertext = Set1Challenge2.fixedXOR(repStringHex, plaintextHex);
+        Data ciphertext
+            = Set1Challenge2.fixedXOR(repString, Data.Encoding.ASCII,
+                                      plaintext, Data.Encoding.ASCII);
         return ciphertext;
     }
 
-    // Return the ASCII string created by decrypting hex string ciphertext with
-    //   key under repeating XOR.
-    public static String decryptWithRepKeyXOR(String key, String ciphertext) {
+    // Return the ASCII string created by decrypting encoding encoded string
+    //   ciphertext with key under repeating XOR.
+    public static String decryptWithRepKeyXOR(String key, String ciphertext,
+                                              Data.Encoding encoding) {
         String repString = getRepString(ciphertext.length() / 2, key);
-
-        Set1Challenge1.Data repStringData
-            = new Set1Challenge1.Data(repString,
-                                      Set1Challenge1.Encoding.ASCII);
-        String repStringHex = repStringData.getHex();
-
-        String plaintextHex = Set1Challenge2.fixedXOR(repStringHex, ciphertext);
-
-        Set1Challenge1.Data plaintextData
-            = new Set1Challenge1.Data(plaintextHex,
-                                      Set1Challenge1.Encoding.HEX);
+        Data plaintextData
+            = Set1Challenge2.fixedXOR(repString, Data.Encoding.ASCII,
+                                      ciphertext, encoding);
         String plaintext = plaintextData.getASCII();
         return plaintext;
     }

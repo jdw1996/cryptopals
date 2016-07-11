@@ -19,9 +19,9 @@ public class S1C5Main {
         System.out.println("should give the (hexadecimal) ciphertext:");
         System.out.println("\"" + ciphertext + "\"");
 
-        String result = Set1Challenge5.encryptWithRepKeyXOR(key, plaintext);
+        Data result = Set1Challenge5.encryptWithRepKeyXOR(key, plaintext);
 
-        if (result.equals(ciphertext)) {
+        if (result.getHex().equals(ciphertext)) {
             System.out.println("This is computed correctly by the program.");
         } else {
             System.out.println("The program does not compute this correctly.");
