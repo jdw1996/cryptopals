@@ -12,7 +12,6 @@ public class S1C2Main {
         String hex2 = "686974207468652062756c6c277320657965";
         String hex3 = "746865206b696420646f6e277420706c6179";
 
-        Data data1 = new Data(hex1, Data.Encoding.HEX);
         Data data2 = new Data(hex2, Data.Encoding.HEX);
         Data data3 = new Data(hex3, Data.Encoding.HEX);
 
@@ -23,7 +22,8 @@ public class S1C2Main {
         System.out.println("should be:");
         System.out.println("\"" + hex3 + "\"");
 
-        Data result = Set1Challenge2.fixedXOR(data1, data2);
+        Data result = Set1Challenge2.fixedXOR(hex1, Data.Encoding.HEX,
+                                              hex2, Data.Encoding.HEX);
 
         if (result.getHex().equals(hex3)) {
             System.out.println("This is computed correctly by the program.");
