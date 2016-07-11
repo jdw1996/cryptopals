@@ -8,8 +8,7 @@
 public class Set1Challenge2 {
 
     // Return the result of XOR-ing the two Data objects datax and datay.
-    public static Set1Challenge1.Data fixedXOR(Set1Challenge1.Data datax,
-                                               Set1Challenge1.Data datay) {
+    public static Data fixedXOR(Data datax, Data datay) {
         byte[] bytesx = datax.getBytes();
         byte[] bytesy = datay.getBytes();
         byte[] bytesz = new byte[bytesx.length];
@@ -19,7 +18,7 @@ public class Set1Challenge2 {
             int bytez = bytex ^ bytey;
             bytesz[i] = (byte)(0xff & bytez);
         }
-        Set1Challenge1.Data dataz = new Set1Challenge1.Data(bytesz);
+        Data dataz = new Data(bytesz);
         return dataz;
     }
 
