@@ -16,10 +16,10 @@ public class S1C1Main {
         System.out.println("the base-64 encoding should be:");
         System.out.println("\"" + base64 + "\"");
 
-        Set1Challenge1.Data data
-            = new Set1Challenge1.Data(hex, Set1Challenge1.Encoding.HEX);
+        Data hexData = new Data(hex, Data.Encoding.HEX);
+        Data base64Data = new Data(base64, Data.Encoding.BASE64);
 
-        if (data.getBase64().equals(base64)) {
+        if (hexData.equals(base64Data)) {
             System.out.println("This is computed correctly by the program.");
         } else {
             System.out.println("The program does not compute this correctly.");
@@ -27,7 +27,7 @@ public class S1C1Main {
 
         System.out.println("");
         System.out.println("This string translates in ASCII to:");
-        System.out.println("\"" + data.getASCII() + "\"");
+        System.out.println("\"" + hexData.getASCII() + "\"");
     }
 
 }
