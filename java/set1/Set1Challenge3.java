@@ -84,11 +84,10 @@ public class Set1Challenge3 {
             repStringBuffer.append(key);
         }
         String repString = repStringBuffer.toString();
-        Data repStringData = new Data(repString, Data.Encoding.ASCII);
-        Data ciphertextData = new Data(ciphertext, Data.Encoding.HEX);
 
         Data plaintextData
-            = Set1Challenge2.fixedXOR(repStringData, ciphertextData);
+            = Set1Challenge2.fixedXOR(repString, Data.Encoding.ASCII,
+                                      ciphertext, Data.Encoding.HEX);
         String plaintext = plaintextData.getASCII();
         double score = scoreIsEnglish(plaintext);
 
