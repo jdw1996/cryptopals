@@ -19,12 +19,12 @@ public class Set1Challenge5 {
 
     // Return the ASCII string created by decrypting encoding encoded string
     //   ciphertext with key under repeating XOR.
-    public static String decryptWithRepKeyXOR(String key, String ciphertext,
-                                              Data.Encoding encoding) {
-        String repString = getRepString(ciphertext.length() / 2, key);
+    public static String decryptWithRepKeyXOR(String key, Data ciphertext) {
+        String ciphertextHex = ciphertext.getHex();
+        String repString = getRepString(ciphertext.getSize(), key);
         Data plaintextData
             = Set1Challenge2.fixedXOR(repString, Data.Encoding.ASCII,
-                                      ciphertext, encoding);
+                                      ciphertextHex, Data.Encoding.HEX);
         String plaintext = plaintextData.getASCII();
         return plaintext;
     }
