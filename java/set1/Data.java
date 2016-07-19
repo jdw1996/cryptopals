@@ -110,6 +110,16 @@ public class Data {
         return data.length;
     }
 
+    // Return the ASCII character corresponding to integer n.
+    public static char chr(int n) {
+        return (char)n;
+    }
+
+    // Return the numeric value of an ASCII character c.
+    public static int ord(char c) {
+        return (int)c;
+    }
+
     // Byte array to store information
     private byte[] data;
 
@@ -148,16 +158,6 @@ public class Data {
         } else {
             return x + 10 - 97; // 97 == ord('a')
         }
-    }
-
-    // Return the ASCII character corresponding to integer n.
-    public static char chr(int n) {
-        return (char)n;
-    }
-
-    // Return the numeric value of an ASCII character c.
-    public static int ord(char c) {
-        return (int)c;
     }
 
 }
