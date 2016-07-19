@@ -17,9 +17,9 @@ public class S1C1Main {
         System.out.println("\"" + base64 + "\"");
 
         Data hexData = new Data(hex, Data.Encoding.HEX);
-        Data base64Data = new Data(base64, Data.Encoding.BASE64);
+        String calculatedBase64 = Set1Challenge1.hexToBase64(hex);
 
-        if (hexData.equals(base64Data)) {
+        if (calculatedBase64.equals(base64)) {
             System.out.println("This is computed correctly by the program.");
         } else {
             System.out.println("The program does not compute this correctly.");
