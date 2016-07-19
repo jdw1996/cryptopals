@@ -17,10 +17,10 @@ public class Set1Challenge4 {
 
     // Return an XORDecryption representing the best decryption of any of the
     //   hex strings in the file filename.
-    public static Set1Challenge3.XORDecryption findAndDecrypt(String filename) {
+    public static XORDecryption findAndDecrypt(String filename) {
         String currLine;
-        Set1Challenge3.XORDecryption bestXORDecryption = null;
-        Set1Challenge3.XORDecryption currXORDecryption;
+        XORDecryption bestXORDecryption = null;
+        XORDecryption currXORDecryption;
         try ( InputStream inStream = new FileInputStream(filename);
               InputStreamReader inStreamReader
                   = new InputStreamReader(inStream, Charset.forName("UTF-8"));

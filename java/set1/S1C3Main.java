@@ -13,8 +13,7 @@ public class S1C3Main {
         System.out.println("Given the hex string:");
         System.out.println("\"" + hex + "\"");
 
-        Set1Challenge3.XORDecryption result
-            = Set1Challenge3.crackSingleCharXOR(hex);
+        XORDecryption result = Set1Challenge3.crackSingleCharXOR(hex);
 
         System.out.println("the decryption by single character XOR is:");
         System.out.println("\"" + result.getPlaintext() + "\"");

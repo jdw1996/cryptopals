@@ -217,9 +217,8 @@ public class Set1Challenge6 {
 
     // Return an array of XORDecryptions corresponding to the Data objects in
     //   cols.
-    private static Set1Challenge3.XORDecryption[] decryptArray(Data[] cols) {
-        Set1Challenge3.XORDecryption[] result
-            = new Set1Challenge3.XORDecryption[cols.length];
+    private static XORDecryption[] decryptArray(Data[] cols) {
+        XORDecryption[] result = new XORDecryption[cols.length];
         for (int i = 0; i < cols.length; i++) {
             result[i] = Set1Challenge3.crackSingleCharXOR(cols[i].getHex());
         }
@@ -234,8 +233,8 @@ public class Set1Challenge6 {
                                                   Data.Encoding encoding) {
         String currLine;
         String ciphertext = "";
-        Set1Challenge3.XORDecryption bestXORDecryption = null;
-        Set1Challenge3.XORDecryption currXORDecryption;
+        XORDecryption bestXORDecryption = null;
+        XORDecryption currXORDecryption;
         try ( InputStream inStream = new FileInputStream(filename);
               InputStreamReader inStreamReader
                   = new InputStreamReader(inStream, Charset.forName("UTF-8"));
@@ -253,7 +252,7 @@ public class Set1Challenge6 {
         int keySize = repKeyXORKeySize(fileData);
         Data[] chunks = chunkData(keySize, fileData);
         Data[] cols = transposeChunks(chunks);
-        Set1Challenge3.XORDecryption[] colDecryptions = decryptArray(cols);
+        XORDecryption[] colDecryptions = decryptArray(cols);
 
         String key = "";
         for (int i = 0; i < keySize; i++) {
@@ -264,7 +263,7 @@ public class Set1Challenge6 {
         char currChar;
         outer:
         for (int i = 0; i < chunks.length; i++) {
-            for (Set1Challenge3.XORDecryption dec : colDecryptions) {
+            for (XORDecryption dec : colDecryptions) {
                 try {
                     currChar = dec.getPlaintext().charAt(i);
                     plaintext += currChar;
