@@ -5,46 +5,25 @@
  */
 
 
-public class XORDecryption {
-
-    private double score;
-    private char key;
-    private String plaintext;
-    private String ciphertext;
+public class XORDecryption extends Decryption {
 
     // Constructor
     public XORDecryption(double score, char key,
                          String plaintext, String ciphertext) {
+        super(plaintext, ciphertext);
         this.score = score;
         this.key = key;
-        this.plaintext = plaintext;
-        this.ciphertext = ciphertext;
     }
 
     // Getters and setters
     public double getScore() {
         return score;
     }
-    public void setScore(double score) {
-        this.score = score;
-    }
     public char getKey() {
         return key;
     }
-    public void setKey(char key) {
-        this.key = key;
-    }
-    public String getPlaintext() {
-        return plaintext;
-    }
-    public void setPlaintext(String plaintext) {
-        this.plaintext = plaintext;
-    }
-    public String getCiphertext() {
-        return ciphertext;
-    }
-    public void setCiphertext(String ciphertext) {
-        this.ciphertext = ciphertext;
-    }
+
+    private double score;
+    private char key;
 
 }
