@@ -15,8 +15,8 @@ import java.nio.charset.Charset;
 
 public class Set1Challenge4 {
 
-    // Return an XORDecryption representing the best decryption of any of the
-    //   hex strings in the file filename.
+    // Return an XORDecryption representing the best decryption of any of the hex strings in the
+    //   file filename.
     public static XORDecryption findAndDecrypt(String filename) {
         String currLine;
         XORDecryption bestXORDecryption = null;
@@ -30,8 +30,7 @@ public class Set1Challenge4 {
                 if (currLine == null) break;
                 currXORDecryption = Set1Challenge3.crackSingleCharXOR(currLine);
                 if (bestXORDecryption == null
-                    || currXORDecryption.getScore()
-                       > bestXORDecryption.getScore()) {
+                    || currXORDecryption.getScore() > bestXORDecryption.getScore()) {
                     bestXORDecryption = currXORDecryption;
                 }
             }

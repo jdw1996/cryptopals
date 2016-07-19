@@ -35,17 +35,14 @@ public class Set1Challenge6 {
         return hammingDistance(ba1Data, ba2Data);
     }
 
-    // Return the Hamming distance between s1 and s2, where both are strings
-    //   with Encoding encoding.
-    public static int hammingDistance(String s1, String s2,
-                                      Data.Encoding encoding) {
+    // Return the Hamming distance between s1 and s2, where both are strings with Encoding encoding.
+    public static int hammingDistance(String s1, String s2, Data.Encoding encoding) {
         Data s1Data = new Data(s1, encoding);
         Data s2Data = new Data(s2, encoding);
         return hammingDistance(s1Data, s2Data);
     }
 
-    // Return the Hamming distance between d1 and d2, where both are Data
-    //   objects.
+    // Return the Hamming distance between d1 and d2, where both are Data objects.
     public static int hammingDistance(Data d1, Data d2) {
         byte[] d1Bytes = d1.getBytes();
         byte[] d2Bytes = d2.getBytes();
@@ -75,28 +72,21 @@ public class Set1Challenge6 {
 
     // Return the average edit distance between two consecutive sections of
     //   keySize bytes from encryption, a Data object.
+    // Requires: encryption.getSize() / keySize >= 4
     private static double normEditDistance(int keySize, Data encryption) {
         String ciphertextHex = encryption.getHex();
         int hexKeySize = 2 * keySize;
         String substr1 = ciphertextHex.substring(0, hexKeySize);
         String substr2 = ciphertextHex.substring(hexKeySize, 2 * hexKeySize);
-        String substr3
-            = ciphertextHex.substring(2 * hexKeySize, 3 * hexKeySize);
-        String substr4
-            = ciphertextHex.substring(3 * hexKeySize, 4 * hexKeySize);
+        String substr3 = ciphertextHex.substring(2 * hexKeySize, 3 * hexKeySize);
+        String substr4 = ciphertextHex.substring(3 * hexKeySize, 4 * hexKeySize);
 
-        double diff1 = (double)hammingDistance(substr1, substr2,
-                                               Data.Encoding.HEX);
-        double diff2 = (double)hammingDistance(substr1, substr3,
-                                               Data.Encoding.HEX);
-        double diff3 = (double)hammingDistance(substr1, substr4,
-                                               Data.Encoding.HEX);
-        double diff4 = (double)hammingDistance(substr2, substr3,
-                                               Data.Encoding.HEX);
-        double diff5 = (double)hammingDistance(substr2, substr4,
-                                               Data.Encoding.HEX);
-        double diff6 = (double)hammingDistance(substr3, substr4,
-                                               Data.Encoding.HEX);
+        double diff1 = (double)hammingDistance(substr1, substr2, Data.Encoding.HEX);
+        double diff2 = (double)hammingDistance(substr1, substr3, Data.Encoding.HEX);
+        double diff3 = (double)hammingDistance(substr1, substr4, Data.Encoding.HEX);
+        double diff4 = (double)hammingDistance(substr2, substr3, Data.Encoding.HEX);
+        double diff5 = (double)hammingDistance(substr2, substr4, Data.Encoding.HEX);
+        double diff6 = (double)hammingDistance(substr3, substr4, Data.Encoding.HEX);
 
         return (diff1 + diff2 + diff3 + diff4 + diff5 + diff6) / (6 * keySize);
     }
@@ -120,8 +110,8 @@ public class Set1Challenge6 {
 
     /*** STEP 5 ***/
 
-    // Return an array of Data objects containing chunkSize bytes each from
-    //   data (though the last Data object may have fewer bytes).
+    // Return an array of Data objects containing chunkSize bytes each from data (though the last
+    //   Data object may have fewer bytes).
     private static Data[] chunkData(int chunkSize, Data data) {
         int resultLength = (data.getSize() / chunkSize)
                            + ((data.getSize() % chunkSize == 0 ? 0 : 1));
@@ -129,12 +119,10 @@ public class Set1Challenge6 {
         String dataHex = data.getASCII();   // since ASCII characters are bytes
         for (int i = 0; i < resultLength; i++) {
             if (i == resultLength - 1) {
-                result[i] = new Data(dataHex.substring(i * chunkSize),
-                                     Data.Encoding.ASCII);
+                result[i] = new Data(dataHex.substring(i * chunkSize), Data.Encoding.ASCII);
                 break;                      // this is last iteration
             }
-            result[i] = new Data(dataHex.substring(i * chunkSize,
-                                                   (i+1) * chunkSize),
+            result[i] = new Data(dataHex.substring(i * chunkSize, (i+1) * chunkSize),
                                  Data.Encoding.ASCII);
         }
         return result;
@@ -149,8 +137,7 @@ public class Set1Challenge6 {
             chunksBytes[i] = chunks[i].getBytes();
         }
 
-        int numShortColumns = chunksBytes[0].length
-                              - chunksBytes[chunks.length - 1].length;
+        int numShortColumns = chunksBytes[0].length - chunksBytes[chunks.length - 1].length;
         int numFullColumns = chunksBytes[0].length - numShortColumns;
 
         byte[][] resultBytes = new byte[chunksBytes[0].length][];
@@ -160,9 +147,7 @@ public class Set1Challenge6 {
                 resultBytes[i][j] = chunksBytes[j][i];
             }
         }
-        for (int i = numFullColumns;
-             i < numFullColumns + numShortColumns;
-             i++) {
+        for (int i = numFullColumns; i < numFullColumns + numShortColumns; i++) {
             resultBytes[i] = new byte[chunks.length - 1];
             for (int j = 0; j < chunks.length - 1; j++) {
                 resultBytes[i][j] = chunksBytes[j][i];
@@ -178,8 +163,7 @@ public class Set1Challenge6 {
 
     /*** STEP 7 ***/
 
-    // Return an array of XORDecryptions corresponding to the Data objects in
-    //   cols.
+    // Return an array of XORDecryptions corresponding to the Data objects in cols.
     private static XORDecryption[] decryptArray(Data[] cols) {
         XORDecryption[] result = new XORDecryption[cols.length];
         for (int i = 0; i < cols.length; i++) {
@@ -190,10 +174,9 @@ public class Set1Challenge6 {
 
     /*** STEP 8 ***/
 
-    // Return a RepKeyXORDecryption representing the most likely decryption of
-    //   the encoding encoded data found in filename.
-    public static RepKeyXORDecryption decryptFile(String filename,
-                                                  Data.Encoding encoding) {
+    // Return a RepKeyXORDecryption representing the most likely decryption of the encoding encoded
+    //   data found in filename.
+    public static RepKeyXORDecryption decryptFile(String filename, Data.Encoding encoding) {
         String currLine;
         String ciphertext = "";
         XORDecryption bestXORDecryption = null;
@@ -236,8 +219,7 @@ public class Set1Challenge6 {
             }
         }
 
-        RepKeyXORDecryption result
-            = new RepKeyXORDecryption(key, plaintext, ciphertext);
+        RepKeyXORDecryption result = new RepKeyXORDecryption(key, plaintext, ciphertext);
         return result;
     }
 

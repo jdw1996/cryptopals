@@ -11,9 +11,8 @@ import java.util.List;
 
 public class Set1Challenge3 {
 
-    // Return an XORDecryption containing the score of the best decryption, the
-    //   character used for decryption, and the decrypted version of the hex
-    //   string ciphertext.
+    // Return an XORDecryption containing the score of the best decryption, the character used for
+    //   decryption, and the decrypted version of the hex string ciphertext.
     public static XORDecryption crackSingleCharXOR(String ciphertext) {
         char chr0 = Data.chr(0);
         char chr127 = Data.chr(127);
@@ -31,9 +30,9 @@ public class Set1Challenge3 {
     }
 
 
-    // Return an XORDecryption with key key, decryption determined by decrypting
-    //   the hex string ciphertext with key, and score determined by scoring the
-    //   decryption on how likely it is to be English text.
+    // Return an XORDecryption with key key, decryption determined by decrypting the hex string
+    //   ciphertext with key, and score determined by scoring the decryption on how likely it is to
+    //   be English text.
     private static XORDecryption decryptWith(char key, String ciphertext) {
         int halfCiphertextLength = ciphertext.length() / 2;
         StringBuffer repStringBuffer = new StringBuffer(halfCiphertextLength);
@@ -42,9 +41,8 @@ public class Set1Challenge3 {
         }
         String repString = repStringBuffer.toString();
 
-        Data plaintextData
-            = Set1Challenge2.fixedXOR(repString, Data.Encoding.ASCII,
-                                      ciphertext, Data.Encoding.HEX);
+        Data plaintextData = Set1Challenge2.fixedXOR(repString, Data.Encoding.ASCII,
+                                                     ciphertext, Data.Encoding.HEX);
         String plaintext = plaintextData.getASCII();
         double score = scoreIsEnglish(plaintext);
 

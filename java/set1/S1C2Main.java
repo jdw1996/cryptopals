@@ -22,8 +22,7 @@ public class S1C2Main {
         System.out.println("should be:");
         System.out.println("\"" + hex3 + "\"");
 
-        Data result = Set1Challenge2.fixedXOR(hex1, Data.Encoding.HEX,
-                                              hex2, Data.Encoding.HEX);
+        Data result = Set1Challenge2.fixedXOR(hex1, Data.Encoding.HEX, hex2, Data.Encoding.HEX);
 
         if (result.getHex().equals(hex3)) {
             System.out.println("This is computed correctly by the program.");

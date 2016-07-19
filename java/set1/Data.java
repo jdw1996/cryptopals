@@ -37,7 +37,7 @@ public class Data {
             }
         } else if (encoding == Encoding.BASE64) {
             data = Base64.getDecoder().decode(info);
-        } else {           // must be ASCII
+        } else {                // must be ASCII
             data = new byte[info.length()];
             for (int i = 0; i < info.length(); i++) {
                 data[i] = (byte)(info.charAt(i));
@@ -45,7 +45,7 @@ public class Data {
         }
     }
     public Data(Data d) {
-        this(d.getInt());  // could use any getter/constructor combo
+        this(d.getInt());       // could use any getter/constructor combo
     }
 
     // Return true if that equals this; return false otherwise.

@@ -7,32 +7,29 @@
 
 public class Set1Challenge5 {
 
-    // Return the hex string created by encrypting ASCII string plaintext with
-    //   key under repeating XOR.
+    // Return the hex string created by encrypting ASCII string plaintext with key under repeating
+    //   XOR.
     public static Data encryptWithRepKeyXOR(String key, String plaintext) {
         String repString = getRepString(plaintext.length(), key);
-        Data ciphertext
-            = Set1Challenge2.fixedXOR(repString, Data.Encoding.ASCII,
-                                      plaintext, Data.Encoding.ASCII);
+        Data ciphertext = Set1Challenge2.fixedXOR(repString, Data.Encoding.ASCII,
+                                                  plaintext, Data.Encoding.ASCII);
         return ciphertext;
     }
 
-    // Return the ASCII string created by decrypting encoding encoded string
-    //   ciphertext with key under repeating XOR.
+    // Return the ASCII string created by decrypting encoding encoded string ciphertext with key
+    //   under repeating XOR.
     public static String decryptWithRepKeyXOR(String key, Data ciphertext) {
         String ciphertextHex = ciphertext.getHex();
         String repString = getRepString(ciphertext.getSize(), key);
-        Data plaintextData
-            = Set1Challenge2.fixedXOR(repString, Data.Encoding.ASCII,
-                                      ciphertextHex, Data.Encoding.HEX);
+        Data plaintextData = Set1Challenge2.fixedXOR(repString, Data.Encoding.ASCII,
+                                                     ciphertextHex, Data.Encoding.HEX);
         String plaintext = plaintextData.getASCII();
         return plaintext;
     }
 
     // Return a string of length len consisting of repetitions of key.
     private static String getRepString(int len, String key) {
-        StringBuilder repStringBuilder
-            = new StringBuilder(len + key.length() - 1);
+        StringBuilder repStringBuilder = new StringBuilder(len + key.length() - 1);
         while (repStringBuilder.length() < len) {
             repStringBuilder.append(key);
         }
