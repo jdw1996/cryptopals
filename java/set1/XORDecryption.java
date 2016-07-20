@@ -9,7 +9,7 @@ public class XORDecryption extends Decryption {
 
     // Constructor
     public XORDecryption(double score, char key,
-                         String plaintext, String ciphertext) {
+                         String plaintext, Data ciphertext) {
         super(plaintext, ciphertext);
         this.score = score;
         this.key = key;

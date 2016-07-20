@@ -7,11 +7,8 @@
 
 public class Set1Challenge2 {
 
-    // Return the result of XOR-ing the two strings x and y, encoded under encx and ency,
-    //   respectively.
-    public static Data fixedXOR(String x, Data.Encoding encx, String y, Data.Encoding ency) {
-        Data datax = new Data(x, encx);
-        Data datay = new Data(y, ency);
+    // Return the result of XOR-ing the two Data objects datax and datay.
+    public static Data fixedXOR(Data datax, Data datay) {
         byte[] bytesx = datax.getBytes();
         byte[] bytesy = datay.getBytes();
         byte[] bytesz = new byte[bytesx.length];
@@ -23,6 +20,14 @@ public class Set1Challenge2 {
         }
         Data dataz = new Data(bytesz);
         return dataz;
+    }
+
+    // Return the result of XOR-ing the two strings x and y, encoded under encx and ency,
+    //   respectively.
+    public static Data fixedXOR(String x, Data.Encoding encx, String y, Data.Encoding ency) {
+        Data datax = new Data(x, encx);
+        Data datay = new Data(y, ency);
+        return fixedXOR(datax, datay);
     }
 
 }

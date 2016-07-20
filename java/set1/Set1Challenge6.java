@@ -167,7 +167,7 @@ public class Set1Challenge6 {
     private static XORDecryption[] decryptArray(Data[] cols) {
         XORDecryption[] result = new XORDecryption[cols.length];
         for (int i = 0; i < cols.length; i++) {
-            result[i] = Set1Challenge3.crackSingleCharXOR(cols[i].getHex());
+            result[i] = Set1Challenge3.crackSingleCharXOR(cols[i]);
         }
         return result;
     }
@@ -219,7 +219,8 @@ public class Set1Challenge6 {
             }
         }
 
-        RepKeyXORDecryption result = new RepKeyXORDecryption(key, plaintext, ciphertext);
+        RepKeyXORDecryption result
+            = new RepKeyXORDecryption(key, plaintext, new Data(ciphertext, encoding));
         return result;
     }
 

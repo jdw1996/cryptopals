@@ -7,10 +7,10 @@
 public abstract class Decryption {
 
     private String plaintext;
-    private String ciphertext;
+    private Data ciphertext;
 
     // Constructor
-    public Decryption(String plaintext, String ciphertext) {
+    public Decryption(String plaintext, Data ciphertext) {
         this.plaintext = plaintext;
         this.ciphertext = ciphertext;
     }
@@ -19,7 +19,7 @@ public abstract class Decryption {
     public String getPlaintext() {
         return plaintext;
     }
-    public String getCiphertext() {
+    public Data getCiphertext() {
         return ciphertext;
     }
 

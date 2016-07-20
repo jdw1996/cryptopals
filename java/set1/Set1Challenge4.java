@@ -17,7 +17,7 @@ public class Set1Challenge4 {
 
     // Return an XORDecryption representing the best decryption of any of the hex strings in the
     //   file filename.
-    public static XORDecryption findAndDecrypt(String filename) {
+    public static XORDecryption findAndDecrypt(String filename, Data.Encoding encoding) {
         String currLine;
         XORDecryption bestXORDecryption = null;
         XORDecryption currXORDecryption;
@@ -28,7 +28,7 @@ public class Set1Challenge4 {
             while (true) {
                 currLine = bufReader.readLine();
                 if (currLine == null) break;
-                currXORDecryption = Set1Challenge3.crackSingleCharXOR(currLine);
+                currXORDecryption = Set1Challenge3.crackSingleCharXOR(currLine, encoding);
                 if (bestXORDecryption == null
                     || currXORDecryption.getScore() > bestXORDecryption.getScore()) {
                     bestXORDecryption = currXORDecryption;
