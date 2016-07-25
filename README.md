@@ -11,7 +11,7 @@ switching to completing these problems in Java. I'm fairly new to Java as well,
 but having programmed in C and C++, I'm expecting less of a learning curve.
 
 In case anyone finds it interesting, I'll leave what I had written in Haskell
-in the `haskell` subdirectory; my Java solutions will be in the `java`
+in the `haskell/` subdirectory; my Java solutions will be in the `java/`
 subdirectory.
 
 Within each language-specific subdirectory, each set of problems has its own
@@ -21,6 +21,12 @@ solve the problem (and sometimes other functions, for the sake of completeness)
 and the file `SXCYMain.Z` is a compilable program that displays the answer to
 the specific problem given. `Z` is the file extension for the appropriate
 language.
+
+The Java solutions can be compiled by running the `build.bash` script in the
+`java/` subdirectory. The resultant `*.class` files can then be found in
+`java/build/`. Because I don't have as many separate files in my Haskell
+solutions, I won't be changing the directory structure under `haskell/` for
+now. A given Haskell program can be built by running `ghc --make` on it.
 
 ## Style
 
