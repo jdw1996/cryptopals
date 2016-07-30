@@ -1,8 +1,8 @@
-/*
- * Joseph Winters
- * Abstract Decryption class to hold decryptions
- * Spring 2016
- */
+/**********************************************
+ Joseph Winters
+ Abstract Decryption class to hold decryptions
+ Spring 2016
+**********************************************/
 
 public abstract class Decryption {
 

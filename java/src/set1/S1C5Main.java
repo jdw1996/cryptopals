@@ -1,8 +1,8 @@
-/*
- * Joseph Winters
- * Cryptopals Set 1 Challenge 5 Program
- * Spring 2016
- */
+/*************************************
+ Joseph Winters
+ Cryptopals Set 1 Challenge 5 Program
+ Spring 2016
+*************************************/
 
 
 public class S1C5Main {

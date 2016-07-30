@@ -1,8 +1,8 @@
-/*
- * Joseph Winters
- * Data class for converting between encodings
- * Spring 2016
- */
+/********************************************
+ Joseph Winters
+ Data class for converting between encodings
+ Spring 2016
+********************************************/
 
 
 import java.nio.ByteBuffer;

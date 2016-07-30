@@ -1,8 +1,8 @@
-/*
- * Joseph Winters
- * XORDecryption class to represent a single-character XOR decryption
- * Spring 2016
- */
+/*******************************************************************
+ Joseph Winters
+ XORDecryption class to represent a single-character XOR decryption
+ Spring 2016
+*******************************************************************/
 
 
 public class XORDecryption extends Decryption {

@@ -1,8 +1,8 @@
-/*
- * Joseph Winters
- * RepKeyXORDecryption class to represent a repeating key XOR decryption
- * Spring 2016
- */
+/**********************************************************************
+ Joseph Winters
+ RepKeyXORDecryption class to represent a repeating key XOR decryption
+ Spring 2016
+**********************************************************************/
 
 
 public class RepKeyXORDecryption extends Decryption {

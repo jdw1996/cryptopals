@@ -1,8 +1,8 @@
-/*
- * Joseph Winters
- * Cryptopals Set 1 Challenge 1 Functions
- * Spring 2016
- */
+/***************************************
+ Joseph Winters
+ Cryptopals Set 1 Challenge 1 Functions
+ Spring 2016
+***************************************/
 
 
 import java.nio.ByteBuffer;
