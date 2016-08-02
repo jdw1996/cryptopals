@@ -15,7 +15,7 @@ public class XORDecryption extends Decryption {
         this.key = key;
     }
 
-    // Getters and setters
+    // Getters
     public double getScore() {
         return score;
     }

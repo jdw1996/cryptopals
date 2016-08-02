@@ -15,7 +15,7 @@ public class RepKeyXORDecryption extends Decryption {
         this.key = key;
     }
 
-    // Getters and setters
+    // Getters
     public String getKey() {
         return key;
     }
