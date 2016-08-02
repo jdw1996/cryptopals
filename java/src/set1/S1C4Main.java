@@ -9,8 +9,8 @@ public class S1C4Main {
 
     public static void main(String[] args) {
         String filename = "S1C4Data.txt";
-        Data.Encoding encoding = Data.Encoding.HEX;
-        XORDecryption result = Set1Challenge4.findAndDecrypt(filename, encoding);
+        Data.Encoding enc = Data.Encoding.HEX;
+        XORDecryption result = Set1Challenge4.xorFindAndDecrypt(filename, enc);
 
         System.out.println("The hex string decrypted is:");
         System.out.println("\"" + result.getCiphertext() + "\"");

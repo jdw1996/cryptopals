@@ -9,8 +9,8 @@ public class S1C6Main {
 
     public static void main(String[] args) {
         String filename = "S1C6Data.txt";
-        Data.Encoding encoding = Data.Encoding.BASE64;
-        RepKeyXORDecryption result = Set1Challenge6.decryptFile(filename, encoding);
+        Data.Encoding enc = Data.Encoding.BASE64;
+        RepKeyXORDecryption result = Set1Challenge6.repKeyXORDecryptFile(filename, enc);
 
         System.out.println("The decryption of file " + filename + " is: ");
         System.out.println("\"\"\"");

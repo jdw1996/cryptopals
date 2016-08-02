@@ -31,9 +31,9 @@ public class Set1Challenge3 {
     }
 
     // Return an XORDecryption containing the score of the best decryption, the character used for
-    //   decryption, and the decrypted version of the hex string ciphertext.
-    public static XORDecryption crackSingleCharXOR(String ciphertext, Data.Encoding encoding) {
-        Data ciphertextData = new Data(ciphertext, encoding);
+    //   decryption, and the decrypted version of the enc encoded string ciphertext.
+    public static XORDecryption crackSingleCharXOR(String ciphertext, Data.Encoding enc) {
+        Data ciphertextData = new Data(ciphertext, enc);
         return crackSingleCharXOR(ciphertextData);
     }
 

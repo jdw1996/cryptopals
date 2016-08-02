@@ -35,10 +35,10 @@ public class Set1Challenge6 {
         return hammingDistance(ba1Data, ba2Data);
     }
 
-    // Return the Hamming distance between s1 and s2, where both are strings with Encoding encoding.
-    public static int hammingDistance(String s1, String s2, Data.Encoding encoding) {
-        Data s1Data = new Data(s1, encoding);
-        Data s2Data = new Data(s2, encoding);
+    // Return the Hamming distance between s1 and s2, where both are strings with Encoding enc.
+    public static int hammingDistance(String s1, String s2, Data.Encoding enc) {
+        Data s1Data = new Data(s1, enc);
+        Data s2Data = new Data(s2, enc);
         return hammingDistance(s1Data, s2Data);
     }
 
@@ -174,9 +174,9 @@ public class Set1Challenge6 {
 
     /*** STEP 8 ***/
 
-    // Return a RepKeyXORDecryption representing the most likely decryption of the encoding encoded
-    //   data found in filename.
-    public static RepKeyXORDecryption decryptFile(String filename, Data.Encoding encoding) {
+    // Return a RepKeyXORDecryption representing the most likely decryption of the enc encoded data
+    //   found in filename.
+    public static RepKeyXORDecryption repKeyXORDecryptFile(String filename, Data.Encoding enc) {
         String currLine;
         String ciphertext = "";
         XORDecryption bestXORDecryption = null;
@@ -194,7 +194,7 @@ public class Set1Challenge6 {
             System.out.println("Unable to access and read file " + filename);
         }
 
-        Data fileData = new Data(ciphertext, encoding);
+        Data fileData = new Data(ciphertext, enc);
         int keySize = repKeyXORKeySize(fileData);
         Data[] chunks = chunkData(keySize, fileData);
         Data[] cols = transposeChunks(chunks);
@@ -220,7 +220,7 @@ public class Set1Challenge6 {
         }
 
         RepKeyXORDecryption result
-            = new RepKeyXORDecryption(key, plaintext, new Data(ciphertext, encoding));
+            = new RepKeyXORDecryption(key, plaintext, new Data(ciphertext, enc));
         return result;
     }
 
