@@ -5,12 +5,22 @@
 *************************************/
 
 
+import java.lang.IllegalArgumentException;
+
+
 public class S1C6Main {
 
     public static void main(String[] args) {
         String filename = "S1C6Data.txt";
         Data.Encoding enc = Data.Encoding.BASE64;
-        RepKeyXORDecryption result = Set1Challenge6.repKeyXORDecryptFile(filename, enc);
+
+        RepKeyXORDecryption result;
+        try {
+            result = Set1Challenge6.repKeyXORDecryptFile(filename, enc);
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+            return;
+        }
 
         System.out.println("The decryption of file " + filename + " is: ");
         System.out.println("\"\"\"");
