@@ -5,9 +5,6 @@
 *************************************/
 
 
-import java.lang.IllegalArgumentException;
-
-
 public class S1C6Main {
 
     public static void main(String[] args) {
@@ -17,12 +14,12 @@ public class S1C6Main {
         RepKeyXORDecryption result;
         try {
             result = Set1Challenge6.repKeyXORDecryptFile(filename, enc);
-        } catch (IllegalArgumentException e) {
+        } catch (Exception e) {
             e.printStackTrace();
             return;
         }
 
-        System.out.println("The decryption of file " + filename + " is: ");
+        System.out.println("The decryption of file " + filename + " is:");
         System.out.println("\"\"\"");
         System.out.println(result.getPlaintext());
         System.out.println("\"\"\"");

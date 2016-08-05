@@ -9,8 +9,7 @@ import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-
-import java.lang.IllegalArgumentException;
+import java.io.IOException;
 
 import java.nio.charset.Charset;
 
@@ -20,7 +19,7 @@ public class Set1Challenge4 {
     // Return an XORDecryption representing the best decryption of any of the enc encoded strings in
     //   the file filename.
     public static XORDecryption xorFindAndDecrypt(String filename, Data.Encoding enc)
-    throws IllegalArgumentException {
+    throws IOException {
         String currLine;
         XORDecryption bestXORDecryption = null;
         XORDecryption currXORDecryption;
@@ -38,7 +37,7 @@ public class Set1Challenge4 {
                 }
             }
         } catch (Exception e) {
-            throw new IllegalArgumentException("Unable to access and read file " + filename, e);
+            throw new IOException("Unable to access and read file " + filename, e);
         }
         return bestXORDecryption;
     }

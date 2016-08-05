@@ -5,9 +5,6 @@
 *************************************/
 
 
-import java.lang.IllegalArgumentException;
-
-
 public class S1C4Main {
 
     public static void main(String[] args) {
@@ -17,7 +14,7 @@ public class S1C4Main {
         XORDecryption result;
         try {
             result = Set1Challenge4.xorFindAndDecrypt(filename, enc);
-        } catch (IllegalArgumentException e) {
+        } catch (Exception e) {
             e.printStackTrace();
             return;
         }

@@ -9,8 +9,7 @@ import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-
-import java.lang.IllegalArgumentException;
+import java.io.IOException;
 
 import java.nio.charset.Charset;
 
@@ -179,7 +178,7 @@ public class Set1Challenge6 {
     // Return a RepKeyXORDecryption representing the most likely decryption of the enc encoded data
     //   found in filename.
     public static RepKeyXORDecryption repKeyXORDecryptFile(String filename, Data.Encoding enc)
-    throws IllegalArgumentException {
+    throws IOException {
         String currLine;
         String ciphertext = "";
         XORDecryption bestXORDecryption = null;
@@ -194,7 +193,7 @@ public class Set1Challenge6 {
                 ciphertext += currLine;
             }
         } catch (Exception e) {
-            throw new IllegalArgumentException("Unable to access and read file " + filename, e);
+            throw new IOException("Unable to access and read file " + filename, e);
         }
 
         Data fileData = new Data(ciphertext, enc);
