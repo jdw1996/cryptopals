@@ -25,9 +25,7 @@ public class Set1Challenge7 {
 
     // Return an AESECBDecryption representing the decryption of the enc encoded data found in
     //   filename, given the key key.
-    public static AESECBDecryption aesECBDecryptFile(String key,
-                                                     String filename,
-                                                     Data.Encoding enc)
+    public static AESECBDecryption aesECBDecryptFile(String key, String filename, Data.Encoding enc)
     throws IOException, IllegalArgumentException {
         String currLine;
         String ciphertext = "";
