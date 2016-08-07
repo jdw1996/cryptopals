@@ -31,8 +31,6 @@ public class Set1Challenge7 {
     throws IOException, IllegalArgumentException {
         String currLine;
         String ciphertext = "";
-        XORDecryption bestXORDecryption = null;
-        XORDecryption currXORDecryption;
         try ( InputStream inStream = new FileInputStream(filename);
               InputStreamReader inStreamReader
                   = new InputStreamReader(inStream, Charset.forName("UTF-8"));
