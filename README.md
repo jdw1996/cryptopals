@@ -2,36 +2,31 @@
 
 My solutions to the [Matasano Cryptopals challenges](https://cryptopals.com/).
 
-## Format
+I'm using these challenges to learn more about cryptography, but also to learn
+new languages and language features. At the moment I'm focusing on Java, but I
+do plan on working through them in a number of languages.
 
-I started out doing these challenges in Haskell, but found that to be quite
-difficult, given my inexperience with functional programming. I'm still
-planning on learning Haskell, but until I'm more comfortable with it, I'll be
-switching to completing these problems in Java. I'm fairly new to Java as well,
-but having programmed in C and C++, I'm expecting less of a learning curve.
+## Building and Running the Programs
 
-In case anyone finds it interesting, I'll leave what I had written in Haskell
-in the `haskell/` subdirectory; my Java solutions will be in the `java/`
-subdirectory.
+For each challenge, I've created a program that prints the solution to the
+terminal. I've tested all of the solutions in Ubuntu; they may or may not work
+on other operating systems. I'll note any non-standard libraries that I use.
 
-Within each language-specific subdirectory, each set of problems has its own
-subdirectory (or will, once I have started on it). For a challenge `Y` in set
-`X`, the file `SetXChallengeY.Z` is a module containing the functions that
-solve the problem (and sometimes other functions, for the sake of completeness)
-and the file `SXCYMain.Z` is a compilable program that displays the answer to
-the specific problem given. `Z` is the file extension for the appropriate
-language.
+### Haskell
 
-The Java solutions can be compiled by running the `build.bash` script in the
-`java/` subdirectory. The resultant `*.class` files can then be found in
-`java/build/`. Because I don't have as many separate files in my Haskell
-solutions, I won't be changing the directory structure under `haskell/` for
-now. A given Haskell program can be built by running `ghc --make` on it.
+In `haskell/setX/`, run `ghc --make sXcYmain.hs` to build the program for Set
+`X` Challenge `Y`. This will generate an executable `sXcYmain` that can be run.
+All logic for Set `X` Challenge `Y` can be found in
+`haskell/setX/SetXChallengeY.hs`.
+
+### Java
+
+In `java/`, run the `build.bash` script to build all programs. In `java/build/`,
+run `java SXCYMain` to run the program for Set `X` Challenge `Y`. All logic for
+Set `X` Challenge `Y` can be found in `java/src/setX/SetXChallengeY.java`.
 
 ## Style
 
-I'm using these challenges to learn more about cryptography, but also to learn
-new languages and language features. If you have any pointers you'd like to
-share about my code, feel free to
-[open an issue](https://github.com/jdw1996/cryptopals/issues/new) or email me
-at [jdwinters96@gmail.com](mailto:jdwinters96@gmail.com).
+If you have any pointers you'd like to share about my code, feel free to [open
+an issue](https://github.com/jdw1996/cryptopals/issues/new) or email me at
+[jdwinters96@gmail.com](mailto:jdwinters96@gmail.com).
