@@ -136,8 +136,7 @@ public class Data {
     // Return a length two hex string corresponding to byte b.
     private static String byteToHex(byte b) {
         int byteVal = (int)b;
-        return
-            "" + intToHexDigit(byteVal / 16) + intToHexDigit(byteVal % 16);
+        return "" + intToHexDigit(byteVal / 16) + intToHexDigit(byteVal % 16);
     }
 
     // Return a hex digit corresponding to integer n.
