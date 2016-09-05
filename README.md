@@ -2,15 +2,12 @@
 
 My solutions to the [Matasano Cryptopals challenges](https://cryptopals.com/).
 
-I'm using these challenges to learn more about cryptography, but also to learn
-new languages and language features. At the moment I'm focusing on Java, but I
-do plan on working through them in a number of languages.
-
 ## Building and Running the Programs
 
 For each challenge, I've created a program that prints the solution to the
-terminal. I've tested all of the solutions in Ubuntu; they may or may not work
-on other operating systems. I'll note any non-standard libraries that I use.
+terminal. I've tested all of the solutions in Ubuntu 16.04; they may or may not
+work on other operating systems. I'll note any non-standard libraries that I
+use.
 
 ### Haskell
 
