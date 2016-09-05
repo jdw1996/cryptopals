@@ -8,9 +8,7 @@
 public class RepKeyXORDecryption extends Decryption {
 
     // Constructor
-    public RepKeyXORDecryption(String key,
-                               String plaintext,
-                               Data ciphertext) {
+    public RepKeyXORDecryption(String key, String plaintext, Data ciphertext) {
         super(plaintext, ciphertext);
         this.key = key;
     }
