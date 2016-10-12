@@ -32,3 +32,12 @@ August, Fall from September to December, and Winter from January to April.
 If you have any pointers you'd like to share about my code, feel free to [open
 an issue](https://github.com/jdw1996/cryptopals/issues/new) or email me at
 [jdwinters96@gmail.com](mailto:jdwinters96@gmail.com).
+
+## Challenges Completed
+
+### Set 1
+
+**Challenge** | **1** | **2** | **3** | **4** | **5** | **6** | **7** | **8**
+--------------|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:
+Haskell|:white_check_mark:|:white_check_mark:|:white_check_mark:|||||
+Java|:white_check_mark:|:white_check_mark:|:white_check_mark:|:white_check_mark:|:white_check_mark:|:white_check_mark:|:white_check_mark:|:white_check_mark:
