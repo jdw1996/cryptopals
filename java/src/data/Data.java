@@ -67,7 +67,7 @@ public class Data {
     public int getInt() {
         int result = 0;
         for (byte b : data) {
-            result = result * 16 + (int)b;
+            result = (result << 8) + b + ((b < 0) ? 256 : 0);
         }
         return result;
     }
