@@ -16,6 +16,9 @@ In `haskell/setX/`, run `ghc --make sXcYmain.hs` to build the program for Set
 All logic for Set `X` Challenge `Y` can be found in
 `haskell/setX/SetXChallengeY.hs`.
 
+**Disclaimer:** I wrote this code in the process of learning Haskell. It is not very nice. Once I
+know the language better, I hope to come back and rewrite it from scratch.
+
 ### Java
 
 In `java/`, run the `build.bash` script to build all programs. In `java/build/`,
