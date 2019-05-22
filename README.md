@@ -8,6 +8,11 @@ For each challenge, I've created a program that prints the solution to the termi
 all of the solutions in Ubuntu 16.04; they may or may not work on other operating systems. I'll
 note any non-standard libraries that I use.
 
+### C
+
+My C solutions are currently under construction.
+This section will be updated once some are ready.
+
 ### Haskell
 
 In `haskell/setX/`, run `ghc --make sXcYmain.hs` to build the program for Set `X` Challenge `Y`.
@@ -40,5 +45,6 @@ If you have any pointers you'd like to share about my code, feel free to
 
 **Challenge** | **1** | **2** | **3** | **4** | **5** | **6** | **7** | **8**
 --------------|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:
-Haskell|:white_check_mark:|:white_check_mark:|:white_check_mark:|||||
-Java|:white_check_mark:|:white_check_mark:|:white_check_mark:|:white_check_mark:|:white_check_mark:|:white_check_mark:|:white_check_mark:|:white_check_mark:
+C||||||||
+Haskell|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|||||
+Java|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:
