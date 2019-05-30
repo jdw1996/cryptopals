@@ -45,13 +45,13 @@ uint8_t b64_value_decode(char n) {
 /* EXPORTED FUNCTIONS */
 
 // See header file.
-int get_encoded_length(int decoded_length) {
+int b64_get_encoded_length(int decoded_length) {
 	// return 4 * ceil(len / 3)
 	return 4 * (decoded_length / 3 + (decoded_length % 3 != 0));
 }
 
 // See header file.
-int get_decoded_length(int encoded_length, int padding_used) {
+int b64_get_decoded_length(int encoded_length, int padding_used) {
 	return 3 * encoded_length/4 - padding_used;
 }
 
@@ -59,7 +59,7 @@ int get_decoded_length(int encoded_length, int padding_used) {
 char *b64_encode(const uint8_t *data) {
 	// Find the expected length of the encoded string, allocate memory for it.
 	int len = strlen(data);
-	const int encoded_len = get_encoded_length(len);
+	const int encoded_len = b64_get_encoded_length(len);
 	char *ret = malloc((encoded_len + 1) * sizeof(*ret));
 	if (ret == NULL) return ret;
 
@@ -110,7 +110,7 @@ uint8_t *b64_decode(const char *data) {
 	// Find the expected length of the decoded string, allocate memory for it.
 	int len = strlen(data);
 	int padding_used = (data[len - 2] == '=') + (data[len - 1] == '=');
-	const int decoded_len = get_decoded_length(len, padding_used);
+	const int decoded_len = b64_get_decoded_length(len, padding_used);
 	uint8_t *ret = malloc(decoded_len * sizeof(*ret));
 	if (ret == NULL) return ret;
 
