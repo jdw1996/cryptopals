@@ -139,8 +139,3 @@ uint8_t *b64_decode(const char *data) {
 
 	return ret;
 }
-
-// See header file.
-void b64_free(void *data) {
-	free(data);
-}
