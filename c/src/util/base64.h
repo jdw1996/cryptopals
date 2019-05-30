@@ -6,6 +6,14 @@
 
 #include <stdint.h>
 
+// Return the length of a base-64 encoded string given the number of bytes to
+// encode.
+int get_encoded_length(int decoded_length);
+
+// Return the number of bytes encoded by a base-64 encoded string with a given
+// length and amount of padding.
+int get_decoded_length(int encoded_length, int padding_used);
+
 // Return a base-64 encoded version of data.
 char *b64_encode(const uint8_t *data);
 
